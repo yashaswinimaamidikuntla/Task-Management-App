@@ -64,6 +64,17 @@ npm run dev
 npm run build
 ```
 
+## Deployment
+
+This project is deployed on Vercel. To deploy your own instance:
+
+1. Push your code to a Git repository
+2. Import your project to [Vercel](https://vercel.com)
+3. Set up environment variables in Vercel dashboard
+4. Vercel will automatically build and deploy your application
+
+Current deployment: [https://task-management-app-swart-nu.vercel.app](https://task-management-app-swart-nu.vercel.app)
+
 ## Project Structure
 
 - `/src/components` - React components
