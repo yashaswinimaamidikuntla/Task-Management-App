@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+# Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: [Task Management App](https://task-management-app-swart-nu.vercel.app)
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18 with TypeScript
+- Zustand for state management
+- Tailwind CSS for styling
+- React Beautiful DnD for drag-and-drop functionality
+- Firebase for data storage and authentication
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd TaskManagementApp/ui-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Configure Firebase
+- Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
+- Add your Firebase configuration to `.env` file:
 ```
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+3. Install dependencies
+```bash
+npm install
+```
+
+4. Run the development server
+```bash
+npm run dev
+```
+
+5. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Features
+
+- User authentication with Firebase
+- Create, edit, and delete tasks
+- Organize tasks into different columns
+- Drag and drop tasks between columns
+- Real-time data synchronization
+
+## Future Improvements
+
+- Responsive design for mobile devices
+- Offline support
+- Task categories and labels
+- Due date reminders
+- Collaborative features for team tasks
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+## Project Structure
+
+- `/src/components` - React components
+- `/src/store` - Zustand store
+- `/src/types` - TypeScript interfaces and types
+- `/src/utils` - Utility functions
+- `/src/firebase` - Firebase configuration and utilities
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
